@@ -1,0 +1,12 @@
+version: '3'
+services:
+  manga_reader:
+    container_name: manga_reader
+    build: ''
+    ports:
+      - '17994:17994'
+    volumes:
+      - ../manga_reader/:/app/
+    restart: always
+    tty: true
+    privileged: true

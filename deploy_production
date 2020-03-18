@@ -1,0 +1,1 @@
+docker exec -it manga_reader bash -c "npm install && npm run-script build && pm2 del all && pm2 serve --port 17994 build --name 'app' --watch"
