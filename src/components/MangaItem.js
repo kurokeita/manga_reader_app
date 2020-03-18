@@ -17,7 +17,7 @@ class MangaItem extends React.Component {
     render() {
         if (this.props.direction === 'vertical') {
             return(
-                <div >
+                <div className='m-auto'>
                     <a href={this.props.link} title={this.props.title} className='text-decoration-none' onClick={this.handleClick}>
                         <Image src={this.props.cover} className='h-75' fluid thumbnail/>
                     </a>
@@ -32,7 +32,7 @@ class MangaItem extends React.Component {
         } else {
             return(
                 <div className='col-2'>
-                    
+
                 </div>
             )
         }
