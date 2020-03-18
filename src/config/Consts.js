@@ -4,7 +4,16 @@ const Consts = {
         getInfo: 'http://api-nodejs.ddns.net/manga/getinfo',
         getPages: 'http://api-nodejs.ddns.net/manga/getpages',
         getTrending: 'http://api-nodejs.ddns.net/manga/trending',
-        getNewUpdate: 'http://api-nodejs.ddns.net/manga/newupdate',
+        getNewUpdate: 'http://api-nodejs.ddns.net/manga/latest',
+    },
+    sites: {
+        mangahere: 'mangahere',
+        mangareader: 'mangareader',
+    },
+    path: {
+        home: 'home',
+        info: 'info',
+        viewer: 'viewer',
     }
 }
 
