@@ -42,10 +42,34 @@
   }
 }
 
-.title {
+.manga-item-title {
   font-size: large;
+  font-weight: bolder;
+  text-decoration: none;
+  color: white;
+}
+
+.manga-item-title:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .list-title {
   font-size: x-large;
+}
+
+.manga-item {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.manga-cover {
+  height: 200px;
+}
+
+.image-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 100%;
 }

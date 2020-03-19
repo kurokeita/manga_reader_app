@@ -43,7 +43,7 @@ class Home extends React.Component {
             return(
                 <Container fluid className='p-0 justify-content-center'>
                     <CardList title='Trending' type='trending' direction='vertical' site={this.state.site} onClick={this.props.onClick}/>
-                    <CardList title='Latest Update' type='latest' direction='horizontal' site={this.state.site} onClick={this.props.onClick}/>
+                    <CardList title='Latest Update' type='latest' direction='vertical' site={this.state.site} onClick={this.props.onClick}/>
                 </Container>
             )
         } else {

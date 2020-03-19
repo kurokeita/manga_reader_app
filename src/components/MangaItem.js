@@ -17,12 +17,12 @@ class MangaItem extends React.Component {
     render() {
         if (this.props.direction === 'vertical') {
             return(
-                <div className='m-auto'>
-                    <a href={this.props.link} title={this.props.title} className='text-decoration-none' onClick={this.handleClick}>
-                        <Image src={this.props.cover} className='h-75' fluid thumbnail/>
+                <div className='col-2 '>
+                    <a href={this.props.link} title={this.props.title} onClick={this.handleClick}>
+                        <div style={{backgroundImage: 'url(' + this.props.cover + ')'}} className='image-cover img-thumbnail'></div>
                     </a>
                     <p className='mt-2 mb-0' onClick={this.handleClick}>
-                        <a href={this.props.link} title={this.props.title} className='text-decoration-none text-white font-weight-bolder title'>{this.props.title}</a>
+                        <a href={this.props.link} title={this.props.title} className='manga-item-title'>{this.props.title}</a>
                     </p>
                     <p onClick={this.handleClick}>
                         <a href={this.props.lastChapterLink} title={this.props.lastChapter} className='text-decoration-none text-white'>{this.props.lastChapter}</a>
@@ -32,7 +32,7 @@ class MangaItem extends React.Component {
         } else {
             return(
                 <div className='col-2'>
-
+                    
                 </div>
             )
         }
