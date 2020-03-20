@@ -2,6 +2,7 @@ import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import ShortList from './ShortList'
+import FullList from './FullList'
 
 class CardList extends React.Component {
     constructor(props) {
@@ -20,7 +21,11 @@ class CardList extends React.Component {
                 <Card bg='secondary' className='col-9'>
                     <Card.Header className='font-weight-bolder list-title' onClick={this.handleClick}>{this.props.title}</Card.Header>
                     <Card.Body>
-                        <ShortList type={this.props.type} direction={this.props.direction} site={this.props.site} onClick={this.props.onClick}/>
+                        {!this.props.fullList 
+                            ? <ShortList type={this.props.type} direction={this.props.direction} site={this.props.site} mangaTitemClick={this.props.mangaTitemClick}/>
+                            : <FullList type={this.props.type} direction={this.props.direction} site={this.props.site} mangaTitemClick={this.props.mangaTitemClick}/>
+                        }
+                        
                     </Card.Body>
                 </Card>
             </Row>

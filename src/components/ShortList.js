@@ -40,6 +40,7 @@ class ShortList extends React.Component {
                 },
             )
             .then(res => {
+                console.log(res.data.list)
                 this.setState({
                     items: res.data.list
                 })
@@ -56,7 +57,7 @@ class ShortList extends React.Component {
                 <Row className='m-auto p-0 pt-5 col-12 justify-content-center'>
                     {
                         this.state.items.map(e => {
-                            return <MangaItem key={e.title} {...e} direction={this.props.direction} onClick={this.props.onClick}/>
+                            return <MangaItem key={e.title} {...e} direction={this.props.direction} mangaTitemClick={this.props.mangaTitemClick}/>
                         })
                     }
                 </Row>

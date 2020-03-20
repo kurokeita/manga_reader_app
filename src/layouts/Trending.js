@@ -4,11 +4,11 @@ import axios  from 'axios'
 import Consts from '../config/Consts'
 import CardList from '../components/CardList'
 
-class Home extends React.Component {
+class Trending extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            site: Consts.sites.mangahere,
+            site: this.props.site,
         }
     }
 
@@ -22,19 +22,9 @@ class Home extends React.Component {
                         direction='vertical' 
                         site={this.state.site} 
                         changePath={this.props.changePath} 
-                        path={Consts.path.trending} 
+                        path={Consts.path.trending}                        
                         mangaTitemClick ={this.props.mangaTitemClick}
-                        fullList={false}
-                    />
-                    <CardList 
-                        title='Latest Update' 
-                        type='latest' 
-                        direction='vertical' 
-                        site={this.state.site} 
-                        changePath={this.props.changePath} 
-                        path={Consts.path.latest} 
-                        mangaTitemClick ={this.props.mangaTitemClick}
-                        fullList={false}
+                        fullList={true}
                     />
                 </Container>
             )
@@ -44,4 +34,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home
+export default Trending
