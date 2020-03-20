@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Row from 'react-bootstrap/Row'
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import Title from './layouts/Title'
+import Home from './layouts/Home'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			path: 'home',
+			title: 'Kuro Reader',
+			source: 'mangahere'
+		}
+
+		this.setPath = this.setPath.bind(this)
+	}
+
+	setPath(path, title) {
+		this.setState({
+			path: path,
+			title: title
+		})
+	}
+
+    render() {
+        return (
+            <div className="App pb-5">
+				<Title title={this.state.title} />
+				<Row className='col-12 m-0 p-0'>
+					<Jumbotron className='col-12 bg-dark m-0' variant='primary'>
+						<h1 style={{color: "white"}}>Kuro Reader</h1>
+					</Jumbotron>
+				</Row>
+                <Home display={this.state.path === 'home' ? true : false} changePath={this.setPath}/>
+            </div>
+        );
+    }
 }
 
 export default App;

@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  color: white;
+  text-decoration: none;
+  text-decoration-color: white;
 }
 
 .App-logo {
@@ -35,4 +40,60 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.manga-item-title {
+  font-size: large;
+  font-weight: bolder;
+  text-decoration: none;
+  color: white;
+}
+
+.manga-item-title:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.list-title {
+  font-size: x-large;
+  cursor: pointer;
+}
+
+.manga-item-chapter {
+  text-decoration: none;
+  color: white;
+}
+
+.manga-item-chapter:hover {
+  text-decoration: none;
+  color: white;
+}
+
+@media screen and (max-width: 1280px) {
+  .list-title {
+    font-size: small;
+  }
+  .manga-item-title {
+    font-size: small;
+  }
+  .manga-item-chapter {
+    font-size: small;
+  }
+}
+
+.manga-item {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.manga-cover {
+  height: 200px;
+}
+
+.image-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* height: 300px; */
+  width: 100%;
+  padding-top: 150%;
 }

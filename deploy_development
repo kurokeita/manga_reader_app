@@ -1,1 +1,2 @@
-docker exec -it manga_reader bash -c "npm install && pm2 del all && pm2 start node_modules/react-scripts/scripts/start.js --name 'app' --watch"
+docker exec -it manga_reader bash -c "npm install && pm2 del all" 
+docker exec -it manga_reader bash -c "pm2 start node_modules/react-scripts/scripts/start.js --name 'app' --watch"
