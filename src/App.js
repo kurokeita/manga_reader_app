@@ -14,14 +14,7 @@ class App extends React.Component {
 			source: 'mangahere'
 		}
 
-		this.setTitle = this.setTitle.bind(this)
 		this.setPath = this.setPath.bind(this)
-	}
-
-	setTitle(title) {
-		this.setState({
-			title: title
-		})
 	}
 
 	setPath(path, title) {
@@ -40,7 +33,7 @@ class App extends React.Component {
 						<h1 style={{color: "white"}}>Kuro Reader</h1>
 					</Jumbotron>
 				</Row>
-                <Home display={this.state.path === 'home' ? true : false} setTitle={this.setTitle} onClick={this.setPath}/>
+                <Home display={this.state.path === 'home' ? true : false} changePath={this.setPath}/>
             </div>
         );
     }

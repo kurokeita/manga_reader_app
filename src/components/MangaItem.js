@@ -24,9 +24,18 @@ class MangaItem extends React.Component {
                     <p className='mt-2 mb-0' onClick={this.handleClick}>
                         <a href={this.props.link} title={this.props.title} className='manga-item-title'>{this.props.title}</a>
                     </p>
-                    <p onClick={this.handleClick}>
-                        <a href={this.props.lastChapterLink} title={this.props.lastChapter} className='text-decoration-none text-white'>{this.props.lastChapter}</a>
-                    </p>
+                    {this.props.lastChapter &&
+                        (
+                            <p onClick={this.handleClick}>
+                                <a href={this.props.lastChapterLink} title={this.props.lastChapter} className='manga-item-chapter'>{this.props.lastChapter}</a>
+                            </p>
+                        )
+                    }
+                    {this.props.newChapter &&
+                        <p onClick={this.handleClick}>
+                            <a href={this.props.link} title={this.props.title} className='manga-item-chapter'>{this.props.newChapter}</a>
+                        </p>
+                    }
                 </div>
             )
         } else {

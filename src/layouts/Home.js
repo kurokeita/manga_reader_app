@@ -42,8 +42,8 @@ class Home extends React.Component {
         if (this.props.display) {
             return(
                 <Container fluid className='p-0 justify-content-center'>
-                    <CardList title='Trending' type='trending' direction='vertical' site={this.state.site} onClick={this.props.onClick}/>
-                    <CardList title='Latest Update' type='latest' direction='vertical' site={this.state.site} onClick={this.props.onClick}/>
+                    <CardList title='Trending' type='trending' direction='vertical' site={this.state.site} changePath={this.props.changePath} path={Consts.path.trending}/>
+                    <CardList title='Latest Update' type='latest' direction='vertical' site={this.state.site} changePath={this.props.changePath} path={Consts.path.latest}/>
                 </Container>
             )
         } else {

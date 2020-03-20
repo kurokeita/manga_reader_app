@@ -14,6 +14,8 @@ const Consts = {
         home: 'home',
         info: 'info',
         viewer: 'viewer',
+        trending: 'trending',
+        latest: 'latest',
     }
 }
 
