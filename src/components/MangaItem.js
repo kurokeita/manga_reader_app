@@ -11,7 +11,7 @@ class MangaItem extends React.Component {
 
     handleClick = (e) => {
         e.preventDefault()
-        this.props.onClick(Consts.path.info, this.props.title)
+        this.props.mangaTitemClick(this.props.title, this.props.link)
     }
 
     render() {
