@@ -53,7 +53,7 @@ class App extends React.Component {
 				<Trending 
 					display={this.state.path === Consts.path.trending ? true : false} 
 					changePath={this.setPath}  
-					site={this.state.sites}
+					site={this.state.site}
 					mangaTitemClick ={this.mangaTitemClick}
 				/>
             </div>

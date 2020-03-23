@@ -42,8 +42,13 @@ class FullList extends React.Component {
             )
             .then(res => {
                 console.log(res.data.list)
+                let chunks = []
+                for (let i = 0; i < res.data.list.length; i += 6) {
+                    chunks.push(res.data.list.slice(i, i + 6))
+                }
+                console.log(chunks)
                 this.setState({
-                    items: res.data.list
+                    items: chunks
                 })
             })
             .catch(err => {
@@ -53,33 +58,33 @@ class FullList extends React.Component {
     }
 
     render() {
-        // if (this.state.items.length) {
-        //     return(
-        //         <div>
-        //             {
-        //                 this.state.items.map(i => {
-        //                     console.log(i)
-        //                     return(
-        //                         <Row className='m-auto p-0 pt-5 col-12 justify-content-center'>
-        //                             {/* {
-        //                                 i.map(e => {
-        //                                     return <MangaItem key={e.title} {...e} direction={this.props.direction} onClick={this.props.onClick}/>
-        //                                 })
-        //                             } */}
-        //                         </Row>
-        //                     )
-        //                 })
-        //             }
-        //         </div>
+        if (this.state.items.length) {
+            return(
+                <div>
+                    {
+                        this.state.items.map((e, i) => {
+                            // console.log(i)
+                            return(
+                                <Row key={i} className='m-auto p-0 pt-5 col-12 justify-content-center'>
+                                    {
+                                        e.map(elm => {
+                                            return <MangaItem key={elm.title} {...elm} direction={this.props.direction} onClick={this.props.onClick}/>
+                                        })
+                                    }
+                                </Row>
+                            )
+                        })
+                    }
+                </div>
 
-        //     )
-        // } else {
-        return (
-            <Row className='m-auto p-0 pt-5 col-12 justify-content-center'>
-                <ClipLoader size={150} color={"white"} loading={this.state.loading} />
-            </Row>
-        )
-        // }
+            )
+        } else {
+            return (
+                <Row className='m-auto p-0 pt-5 col-12 justify-content-center'>
+                    <ClipLoader size={150} color={"white"} loading={this.state.loading} />
+                </Row>
+            )
+        }
     }
 }
 
